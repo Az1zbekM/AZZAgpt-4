@@ -4,6 +4,8 @@ import { useToast } from '@/components/ui/use-toast'
 import axios from 'axios'
 import TypingAnimation from '@/components/shared/typing-animation'
 import { Send } from 'lucide-react'
+import Sidebar from './sidebar'
+
 export default function Home() {
 	const { toast } = useToast()
 	const [inputValue, setInputValue] = useState('')
@@ -16,7 +18,7 @@ export default function Home() {
 		e.preventDefault()
 
 		if (!inputValue) {
-			toast({ title: 'Please enter a message', })
+			toast({ title: 'Please enter a message !!!', })
 			return;
 		}
 
@@ -83,13 +85,15 @@ export default function Home() {
 					<div className='flex flex-col space-y-4'>
 						{chatHistory.map((message, index) => (
 							<div
-								className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'
-									}`}
+								className={`flex ${
+									message.type === 'user' ? 'justify-end' : 'justify-start'
+								}`}
 								key={index}
 							>
 								<div
-									className={`${message.type === 'user' ? 'bg-blue-600' : 'bg-gray-700'
-										} p-2 px-4 rounded-lg max-w-sm text-pretty-white break-words `}
+									className={`${
+										message.type === 'user' ? 'bg-blue-600' : 'bg-gray-700'
+									} p-2 px-4 rounded-lg max-w-sm text-pretty-white break-words `}
 								>
 									{message.message}
 								</div>
@@ -98,20 +102,20 @@ export default function Home() {
 						{isLoading ? <TypingAnimation /> : null}
 					</div>
 				</div>
-
+						
 				<form
 					style={{ width: '50%' }}
 					className='flex-none p-5 fixed bottom-0 bg-primary-foreground'
 					onSubmit={handleSubmit}
 				>
-					<div className='flex rounded-lg border border-gray-700 bg-gray-800 '>
+					<div className='flex rounded-lg border border-gray-600 bg-[#262626] '>
 						<input
 							spellCheck={false}
 							type='text'
-							placeholder='Enter text'
+							placeholder='Type your message...'
 							value={inputValue}
 							onChange={e => setInputValue(e.target.value)}
-							className='flex-grow bg-gray-800 p-2 px-4 text-white outline-none '
+							className='flex-grow bg-[#262626] p-2 px-4 text-white outline-none '
 						/>
 						<button
 							className='break-words bg-primary-foreground p-2 px-4 text-white font-semibold rounded-lg'
