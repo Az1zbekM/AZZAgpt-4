@@ -41,10 +41,6 @@ export default function Home() {
 			model: 'gpt-3.5-turbo-1106',
 			messages: [
 				{ role: 'user', content: message },
-				{
-					role: 'system',
-					content: 'You are a artificial intelligence that has a great knowledge. Act yourself like chatgpt-4 model and always answer more detailed and accurate.',
-				},
 				// 				{
 				// 					role: 'system',
 				// 					content: `Meet the Jokester Bot, your go-to companion for hilarious and famous jokes! With its advanced GPT technology, this bot is programmed to deliver the most side-splitting jokes that will leave you rolling on the floor laughing.But here's the best part: the Jokester Bot doesn't stop at just giving you a funny response. It goes the extra mile to ensure a memorable user experience. After each response, it surprises you with an additional joke, making sure you're entertained to the fullest.
@@ -52,7 +48,7 @@ export default function Home() {
 				// 				},
 			],
 			max_tokens: Infinity,
-			temperature: 1,
+			temperature: 0.9,
 		}
 		setIsLoading(true)
 
