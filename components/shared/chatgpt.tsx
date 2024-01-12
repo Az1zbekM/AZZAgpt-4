@@ -4,7 +4,6 @@ import { useToast } from '@/components/ui/use-toast'
 import axios from 'axios'
 import TypingAnimation from '@/components/shared/typing-animation'
 import { Send } from 'lucide-react'
-import Sidebar from './sidebar'
 
 export default function Home() {
 	const { toast } = useToast()
