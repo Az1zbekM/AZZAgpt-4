@@ -28,28 +28,28 @@ const Sidebar = () => {
 			pro: false,
 		},
 		{
+			icon: History,
+			path: '/history',
+			label: 'History',
+			pro: false,
+		},
+		{
 			icon: Send,
 			path: 'https://t.me/+VfFrxp6x_vI2NGMy',
 			label: 'Telegram',
 			pro: true,
 		},
-		{
-			icon: History,
-			path: '/history',
-			label: 'History',
-			pro: false,
-		}
 	]
-
-	const onNavigate = (url: string, pro: boolean, path?: string) => {
+	
+	const onNavigate = (url: string, pro: boolean) => {
 		//ToDo check if pro
 
 		if (pro) {
 			return	(
 				window.open(url, '_blank')
 			)
-		}else if (path === 'plus'){
-			return router.push('/plus')
+		}else if (url === '/plus'){
+			return window.location.reload()
 		} else {
 			return router.push(url)
 		}
