@@ -90,7 +90,9 @@ export default function Home() {
 										message.type === 'user' ? 'bg-blue-600' : 'bg-gray-700'
 									} p-2 px-4 rounded-lg max-w-sm text-pretty-white break-words `}
 								>
-									{message.message}
+									{message.message.split('\n').map((line, index) => (
+										<p key={index}>{line}</p>
+									))}
 								</div>
 							</div>
 						))}
